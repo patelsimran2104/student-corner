@@ -17,13 +17,16 @@ public class User implements Serializable {
     @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "user_type")
+    @Column(name = "user_type", nullable = false)
     private UserTypeEnum userTypeEnum;
 
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "enrollment", nullable = false, unique = true)
     private String enrollment;
 
+    @Column(name = "password", nullable = false)
     private String password;
 
     private String email;
