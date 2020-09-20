@@ -3,6 +3,7 @@ package com.university.studentcorner.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * The persistent class for the tbl_user database table.
@@ -11,6 +12,7 @@ import java.util.Date;
 @Table(name = "tbl_user")
 @NamedQuery(name = "User.findAll", query = "SELECT t FROM User t")
 public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +20,7 @@ public class User implements Serializable {
     private int userId;
 
     @Column(name = "user_type", nullable = false)
-    private UserTypeEnum userTypeEnum;
+    private UserTypeEnum userType;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -46,6 +48,10 @@ public class User implements Serializable {
 
     private String address;
 
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Result> result;
+
     public int getUserId() {
         return userId;
     }
@@ -55,11 +61,11 @@ public class User implements Serializable {
     }
 
     public UserTypeEnum getUserType() {
-        return userTypeEnum;
+        return userType;
     }
 
     public void setUserType(UserTypeEnum userType) {
-        this.userTypeEnum = userType;
+        this.userType = userType;
     }
 
     public String getName() {
@@ -148,6 +154,14 @@ public class User implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Result> getResult() {
+        return result;
+    }
+
+    public void setResult(List<Result> result) {
+        this.result = result;
     }
 
 }
