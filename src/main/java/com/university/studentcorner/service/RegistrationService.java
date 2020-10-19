@@ -6,4 +6,5 @@ public interface RegistrationService {
 
     User fetchUserByUserNameAndPassword(String emailId, String password);
     //
+    //
 }
