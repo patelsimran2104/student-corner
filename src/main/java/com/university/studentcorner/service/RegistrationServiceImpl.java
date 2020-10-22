@@ -13,7 +13,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
     @Override
     public User fetchUserByUserNameAndPassword(String email, String enrollment) {
-        return registrationRepository.findByUserNameAndPassword(email, enrollment);
+        return registrationRepository.findByEmailAndPassword(email, enrollment);
     }
 
 
