@@ -12,8 +12,8 @@ public class RegistrationServiceImpl implements RegistrationService {
     public RegistrationRepository registrationRepository;
 
     @Override
-    public User fetchUserByUserNameAndPassword(String email, String enrollment) {
-        return registrationRepository.findByEmailAndPassword(email, enrollment);
+    public User fetchUserByEmailIdAndEnrollment(String emailId, String enrollment) {
+        return registrationRepository.findByEmailAndEnrollment(emailId, enrollment);
     }
 
 
