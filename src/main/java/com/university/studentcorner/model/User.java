@@ -22,6 +22,17 @@ public class User implements Serializable {
     @Column(name = "user_type", nullable = false)
     private UserTypeEnum userType;
 
+    @Column(name="role")
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Column(name = "name", nullable = false)
     private String name;
 
