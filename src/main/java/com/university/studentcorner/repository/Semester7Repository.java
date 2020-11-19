@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface Semester7Repository extends JpaRepository {
+public interface Semester7Repository extends JpaRepository<Semester7, Integer>{
     @Query(value = "SELECT * FROM studentcornerdb.tbl_semester7 where tbl_semester7.result_id=?", nativeQuery = true)
     List<Semester7> getResultForSemester7ByResultId(int qid);
 }
