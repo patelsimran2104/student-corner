@@ -16,5 +16,4 @@ public class RegistrationServiceImpl implements RegistrationService {
         return registrationRepository.findByEmailAndEnrollment(emailId, enrollment);
     }
 
-
 }
