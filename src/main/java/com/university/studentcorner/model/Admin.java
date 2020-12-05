@@ -1,8 +1,8 @@
 package com.university.studentcorner.model;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -11,6 +11,15 @@ import java.io.Serializable;
 public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "adminId")
+    @JsonIgnore
+    private int adminId;
+
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String applicationId;
 
     private String request;
 
@@ -40,6 +49,22 @@ public class Admin implements Serializable {
 
     public void setRequest(String request) {
         this.request = request;
+    }
+
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    public int getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
     }
 
 
