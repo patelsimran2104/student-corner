@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RequestRepository extends CrudRepository<Admin,String> {
 
-    Admin getApplicationIdForUserByRequest(String enrollment);
+    Admin getApplicationIdByRequest(String request);
 }

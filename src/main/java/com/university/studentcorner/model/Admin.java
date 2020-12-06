@@ -12,46 +12,49 @@ public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "adminId")
+//    @JsonIgnore
+//    private int adminId;
+//
+//    @GeneratedValue()
+//    private int requestId;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "adminId")
+    @Column(name = "adminId", nullable = false, unique = true)
     @JsonIgnore
     private int adminId;
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "applicationId")
-    private String applicationId;
-
+    @JoinColumn(name = "adminId")
     private String request;
 
-    private String pending;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "adminId")
+    private String applicationId;
 
-    private Result result;
+    @JoinColumn(name="adminId")
+    private int transNo;
 
-    private String no_of_trans;
+    public Admin() {
 
-    public String getNo_of_trans() {
-        return no_of_trans;
     }
 
-    public void setNo_of_trans(String no_of_trans) {
-        this.no_of_trans = no_of_trans;
+    public Admin(int adminId, String request, String applicationId, int transNo) {
+        this.adminId = adminId;
+        this.request = request;
+        this.applicationId = applicationId;
+        this.transNo = transNo;
     }
 
-    public Result getResult() {
-        return result;
+
+    public int getAdminId() {
+        return adminId;
     }
 
-    public void setResult(Result result) {
-        this.result = result;
-    }
-
-    public String getPending() {
-        return pending;
-    }
-
-    public void setPending(String pending) {
-        this.pending = pending;
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
     }
 
     public String getRequest() {
@@ -70,13 +73,11 @@ public class Admin implements Serializable {
         this.applicationId = applicationId;
     }
 
-    public int getAdminId() {
-        return adminId;
+    public int getTransNo() {
+        return transNo;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setTransNo(int transNo) {
+        this.transNo = transNo;
     }
-
-
 }
