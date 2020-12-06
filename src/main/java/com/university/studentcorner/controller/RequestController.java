@@ -26,6 +26,7 @@ public class RequestController  {
 
     @GetMapping("/id/{id}")
     public Admin sendAppId(@PathVariable String id){
+        System.out.println(id);
         Admin adminObj=null;
         adminObj =requestService.sendApplicationId(id);
         return adminObj;
