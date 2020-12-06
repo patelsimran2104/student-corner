@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "tbl_Admin")
-@NamedQuery(name = "Admin.findAll", query = "SELECT t FROM Admin t")
+@Table(name = "tbl_Admindata")
+@NamedQuery(name = "Admindata.findAll", query = "SELECT t FROM Admin t")
 public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -19,6 +19,7 @@ public class Admin implements Serializable {
     private int adminId;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "applicationId")
     private String applicationId;
 
     private String request;
@@ -26,6 +27,16 @@ public class Admin implements Serializable {
     private String pending;
 
     private Result result;
+
+    private String no_of_trans;
+
+    public String getNo_of_trans() {
+        return no_of_trans;
+    }
+
+    public void setNo_of_trans(String no_of_trans) {
+        this.no_of_trans = no_of_trans;
+    }
 
     public Result getResult() {
         return result;
