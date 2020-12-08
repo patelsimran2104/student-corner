@@ -6,7 +6,7 @@ public interface RequestService {
 
 //   // Admin saveEnrollmentInAdmin(String Enrollment);
 //
-//    void saveEnrollmentInAdmin(String Id);
+    void saveEnrollmentInAdmin(Admin admin);
 //
     Admin sendApplicationId(String request);
 //

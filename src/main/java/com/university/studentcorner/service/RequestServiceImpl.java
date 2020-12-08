@@ -36,11 +36,10 @@ public class RequestServiceImpl implements RequestService{
 //    }
 
 
-//    @Override
-//    public void saveEnrollmentInAdmin(String enrollment) {
-//        admin.setRequest(enrollment);
-//        requestRepository.save(admin);
-//    }
+    @Override
+    public void saveEnrollmentInAdmin(Admin admin) {
+        requestRepository.save(admin);
+    }
 
     @Override
     public Admin sendApplicationId(String request) {

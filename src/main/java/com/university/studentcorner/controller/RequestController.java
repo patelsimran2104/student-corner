@@ -3,6 +3,7 @@
 
 package com.university.studentcorner.controller;
 import com.university.studentcorner.model.Admin;
+import com.university.studentcorner.model.Result;
 import com.university.studentcorner.model.User;
 import com.university.studentcorner.repository.RequestRepository;
 import com.university.studentcorner.service.RequestService;
@@ -37,6 +38,16 @@ public class RequestController  {
 //
 //        return adminObj;
 //    }
+
+
+    /**
+     * @param admin insert
+     */
+    @PostMapping("/insert")
+    private Admin insertTranscript(@RequestBody Admin admin) {
+        requestService.saveEnrollmentInAdmin(admin);
+        return requestService.sendApplicationId(admin.getRequest());
+    }
 
     @GetMapping("/id/{id}")
     public Admin sendAppId(@PathVariable String id){

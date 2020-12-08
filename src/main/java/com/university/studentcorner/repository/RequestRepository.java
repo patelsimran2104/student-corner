@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RequestRepository extends JpaRepository<Admin,Integer> {
 
-    @Query(value = "select * from studentcornerdb.tbl_requestdata where request=?",nativeQuery = true)
+    @Query(value = "select * from studentcornerdb.tbl_admindata where request=?",nativeQuery = true)
     public Admin getApplicationIdForUserByRequest(String enrollment);
 }
