@@ -20,13 +20,14 @@ public class RequestController  {
     private RequestRepository requestRepository;
 
     @GetMapping("/request")
-    public Admin requestForTrans(@RequestParam String enrollment) throws Exception {
+    public Admin requestForTrans(@RequestParam User user,int id) throws Exception {
 
         Admin adminObj=null;
-        System.out.println(enrollment);
-        //System.out.println(id);
-        String request = "1721BECE3011";
-        int transNo=2;
+        System.out.println(user.getEnrollment());
+        System.out.println(id);
+        String request = user.getEnrollment();
+        int transNo = id;
+        //int transNo=2;
         adminObj=requestService.saveRequestAndTransNo(request,transNo);
 //        Admin a = new Admin();
 //        a.setRequest(enrollment);

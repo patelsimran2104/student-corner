@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RequestRepository extends CrudRepository<Admin,String> {
+public interface RequestRepository extends JpaRepository<Admin,String> {
 
     Admin getApplicationIdByRequest(String request);
 }
