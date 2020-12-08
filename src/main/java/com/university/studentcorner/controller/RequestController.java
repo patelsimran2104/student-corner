@@ -2,11 +2,14 @@
 //For transcript Request API
 
 package com.university.studentcorner.controller;
+import com.university.studentcorner.exception.UserNotFoundException;
 import com.university.studentcorner.model.Admin;
 import com.university.studentcorner.model.User;
 import com.university.studentcorner.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/transcript")
@@ -27,8 +30,6 @@ public class RequestController  {
     @GetMapping("/id/{id}")
     public Admin sendAppId(@PathVariable String id){
         System.out.println(id);
-        Admin adminObj=null;
-        adminObj =requestService.sendApplicationId(id);
-        return adminObj;
+        return requestService.sendApplicationId(id);
     }
 }
