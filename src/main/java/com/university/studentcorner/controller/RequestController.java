@@ -19,24 +19,24 @@ public class RequestController  {
 
     private RequestRepository requestRepository;
 
-    @GetMapping("/request")
-    public Admin requestForTrans(@RequestParam User user,int id) throws Exception {
-
-        Admin adminObj=null;
-        System.out.println(user.getEnrollment());
-        System.out.println(id);
-        String request = user.getEnrollment();
-        int transNo = id;
-        //int transNo=2;
-        adminObj=requestService.saveRequestAndTransNo(request,transNo);
+//    @GetMapping("/request")
+//    public Admin requestForTrans(@RequestParam User user,int id) throws Exception {
+//
+//        Admin adminObj=null;
+//        System.out.println(user.getEnrollment());
+//        System.out.println(id);
+//        String request = user.getEnrollment();
+//        int transNo = id;
+//        //int transNo=2;
+//        adminObj=requestService.saveRequestAndTransNo(request,transNo);
 //        Admin a = new Admin();
 //        a.setRequest(enrollment);
 //        requestRepository.save(a);
-
-        System.out.println("saved successfully");
-
-        return adminObj;
-    }
+//
+//        System.out.println("saved successfully");
+//
+//        return adminObj;
+//    }
 
     @GetMapping("/id/{id}")
     public Admin sendAppId(@PathVariable String id){

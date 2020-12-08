@@ -8,9 +8,9 @@ public interface RequestService {
 //
 //    void saveEnrollmentInAdmin(String Id);
 //
-//    Admin sendApplicationId(String request);
+    Admin sendApplicationId(String request);
 //
 //    //int sendApplicationId();
 
-    Admin saveRequestAndTransNo(String request, int transNo);
+//    Admin saveRequestAndTransNo(String request, int transNo);
 }

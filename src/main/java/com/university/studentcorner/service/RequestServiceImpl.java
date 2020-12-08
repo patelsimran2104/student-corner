@@ -22,18 +22,18 @@ public class RequestServiceImpl implements RequestService{
 //        requestRepository.save(admin);
 //    }
 
-    @Override
-    public Admin saveRequestAndTransNo(String request, int transNo) {
-
-        Admin a = new Admin();
-        a.setRequest(request);
-        a.setTransNo(transNo);
-
-        requestRepository.save(a);
-
-        return requestRepository.getApplicationIdByRequest(request);
-
-    }
+//    @Override
+//    public Admin saveRequestAndTransNo(String request, int transNo) {
+//
+//        Admin a = new Admin();
+//        a.setRequest(request);
+//        a.setTransNo(transNo);
+//
+//        requestRepository.save(a);
+//
+//        return requestRepository.getApplicationIdByRequest(request);
+//
+//    }
 
 
 //    @Override
@@ -41,10 +41,10 @@ public class RequestServiceImpl implements RequestService{
 //        admin.setRequest(enrollment);
 //        requestRepository.save(admin);
 //    }
-//
-//    @Override
-//    public Admin sendApplicationId(String request) {
-//        return requestRepository.getApplicationIdForUserByRequest(request);
-//    }
+
+    @Override
+    public Admin sendApplicationId(String request) {
+        return requestRepository.getApplicationIdForUserByRequest(request);
+    }
 
 }
